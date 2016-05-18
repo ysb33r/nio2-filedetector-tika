@@ -35,7 +35,7 @@ uploadArchives {
                 description 'A NIO2 FileTypeDetector provider based upon Apache Tika'
                 tags 'java','nio2'
                 licenses 'Apache-2.0'
-                vcsUrl 'https://github.com/ysb33r/groovy-vfs.git'
+                vcsUrl 'https://github.com/ysb33r/nio2-filedetector-tika.git'
 
                 autoCreatePackage true
                 updatePackage true
