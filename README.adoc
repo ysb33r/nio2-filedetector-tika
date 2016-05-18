@@ -9,7 +9,8 @@ This is a simple wrapper for https://tika.apache.org/[Apache Tika] that allows t
 
 *Artifact id*: `nio2-filetypedetector-tika`
 
-*Version*: Please check *** for the latest published version
+*Version*: Please check https://bintray.com/ysb33r/grysb33r/nio2-filetypedetector-tika/view[Bintray] for the
+latest published version.
 
 == Requirements
 
