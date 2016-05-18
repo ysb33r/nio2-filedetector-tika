@@ -5,3 +5,8 @@ plugins {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) { task ->
+    task.sourceCompatibility = project.sourceCompatibility
+    task.targetCompatibility = project.targetCompatibility
+}

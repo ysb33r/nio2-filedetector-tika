@@ -68,10 +68,6 @@ public class JavaDetector extends FileTypeDetector {
      */
     @Override
     public String probeContentType(Path path) throws IOException {
-        if(path == null) {
-            return null;
-        }
-
         try {
             Metadata metadata = new Metadata();
             metadata.set(Metadata.RESOURCE_NAME_KEY,path.toString());

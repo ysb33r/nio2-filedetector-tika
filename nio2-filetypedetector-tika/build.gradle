@@ -1,7 +1,47 @@
-//plugins {
-//    id 'groovy'
-//}
-//
-//dependencies {
-//    testCompile ('org.spockframework:spock-core:1.0-groovy-2.4')
-//}
+plugins {
+    id 'maven'
+    id 'org.ysb33r.bintray' version '1.6'
+}
+
+project.tasks.withType(JavaCompile) { task ->
+    task.sourceCompatibility = project.sourceCompatibility
+    task.targetCompatibility = project.targetCompatibility
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    description "An archive of the JavaDocs for Maven Central"
+    classifier "javadoc"
+    from javadoc
+}
+
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+uploadArchives {
+    repositories {
+        if (!version.endsWith("SNAPSHOT")) {
+            bintrayMavenDeployer {
+                username project.properties.bintrayUserName
+                apiKey project.properties.bintrayApiKey
+                repoOwner 'ysb33r'
+                repoName 'grysb33r'
+                packageName 'nio2-filetypedetector-tika'
+                description 'A NIO2 FileTypeDetector provider based upon Apache Tika'
+                tags 'java','nio2'
+                licenses 'Apache-2.0'
+                vcsUrl 'https://github.com/ysb33r/groovy-vfs.git'
+
+                autoCreatePackage true
+                updatePackage true
+
+            }
+        }
+    }
+}
+

@@ -24,7 +24,7 @@ import java.nio.file.Files
 /**
  * @author Schalk W. Cronjé
  */
-class GroovyDetectorSpec extends Specification {
+class KotlinDetectorSpec extends Specification {
 
     def "Detect a JAR file"() {
         when: "I give it the Gradle Wrapper JAR file"
@@ -33,4 +33,5 @@ class GroovyDetectorSpec extends Specification {
         then: 'It should be reported as a JAR'
         mimetype == 'application/java-archive'
     }
+
 }

@@ -12,7 +12,7 @@ subprojects {
     apply plugin : 'com.github.hierynomus.license'
 
     group 'org.ysb33r.nio'
-    version '1.0-SNAPSHOT'
+    version '1.0'
 
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
@@ -31,7 +31,7 @@ subprojects {
         ignoreFailures = false
         mapping {
             groovy = 'DOUBLESLASH_STYLE'
-            kt = 'DOUBLESLASH_STYLE'
+            kt = 'JAVADOC_STYLE'
         }
         ext.year = '2016'
         excludes([
