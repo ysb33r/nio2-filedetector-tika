@@ -1,0 +1,25 @@
+= Java NIO2 FIle Type Detection Provider
+
+This is a simple wrapper for https://tika.apache.org/[Apache Tika] that allows the
+`Files.probeContentType(Path)` from NIO2 to be used in real code and actually be useful.
+
+== Mavan Coordinates
+
+*Maven group*: `org.ysb33r.nio`
+
+*Artifact id*: `nio2-filetypedetector-tika`
+
+*Version*: Please check *** for the latest published version
+
+== Requirements
+
+JDK7+
+
+== Usage
+
+Nothing much is required. Just ensure the JAR is on the classpath and it will automatically be loaded by NIO2.
+
+== Other implementations
+
+The `tika-filetypedector-groovy` and `tika-filetypedector-kotlin` directories are left as examples of how to implement
+a `FileTypeDetector` in both Groovy & Kotlin. Their artifacts, however, are not published to Bintray.

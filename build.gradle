@@ -1,0 +1,48 @@
+plugins {
+    id 'com.github.hierynomus.license' version '0.12.1'
+}
+
+subprojects {
+
+    ext {
+        groovyVer = '2.4.3'
+    }
+
+    apply plugin : 'groovy'
+    apply plugin : 'com.github.hierynomus.license'
+
+    group 'org.ysb33r.nio'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        compile 'org.apache.tika:tika-core:1.13'
+        testCompile ('org.spockframework:spock-core:1.0-groovy-2.4')
+    }
+
+    license {
+        header = rootProject.file('config/HEADER')
+        strictCheck = true
+        ignoreFailures = false
+        mapping {
+            groovy = 'DOUBLESLASH_STYLE'
+            kt = 'DOUBLESLASH_STYLE'
+        }
+        ext.year = '2016'
+        excludes([
+            '**/*.ad',
+            '**/*.asciidoc',
+            '**/*.adoc',
+            '**/*.md',
+            '**/*.properties',
+            '**/services/*'
+        ])
+    }
+}
+
+

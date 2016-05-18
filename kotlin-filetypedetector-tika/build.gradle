@@ -1,0 +1,7 @@
+plugins {
+    id 'com.zoltu.kotlin' version '1.0.1'
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
+}

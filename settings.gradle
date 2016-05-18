@@ -1,0 +1,5 @@
+rootProject.name = 'tika-filetypedetector'
+include 'groovy-filetypedetector-tika'
+include 'nio2-filetypedetector-tika'
+include 'kotlin-filetypedetector-tika'
+
